@@ -1,0 +1,57 @@
+/* home
+############################################################################ */
+
+.home {
+
+  .hero-image {
+
+    position: relative;
+
+    h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--color-lightest);
+
+      font-size: clamp(2rem, 10vw, 10rem);
+      font-weight: var(--font-weight-bold);
+      text-align: center;
+      line-height: var(--line-height-tighter);
+
+      text-transform: uppercase;
+      text-shadow: 0 0 30px hsl(0 0 0 / 0.8);
+      margin-bottom: 0;
+    }
+
+    &.has-fb-style {
+
+      &::after {
+        content: "Hallöchen";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background: linear-gradient(150deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 90%, rgba(0, 0, 0, 0.9) 100%);
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 6vw, 10rem);
+        text-align: right;
+        padding: var(--fluid-space-xl);
+        align-items: flex-end;
+        z-index: 2;
+      }
+    }
+  }
+
+  main {
+    padding: 0;
+  }
+}

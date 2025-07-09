@@ -1,0 +1,52 @@
+@media screen and (min-width: 900px) {
+
+  .has-base-grid {
+    grid-template-rows: auto;
+    display: grid;
+    grid-template-columns: minmax(20ch, 1fr) minmax(20ch, var(--max-width-content));
+    gap: var(--fluid-space-m);
+    margin-top: var(--spacing-3xl);
+
+
+    &>* {
+      max-width: var(--max-width-content);
+    }
+
+  
+
+    .toc {
+      
+      width: 100%;
+      .toc-content {
+        position: sticky;
+        top: var(--spacing-3xl);
+
+        h2 {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+/* has grid
+############################################################################# */
+
+@media screen and (min-width: 900px) {
+  .has-grid {
+    display: grid;
+    gap: var(--spacing-m);
+
+    &[data-columns="2"] {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* Composition
+############################################################################# */
+  
+  main > *:not(.is-full-width) {
+    max-width: var(--max-width-page);
+    margin: 0 auto;
+  }

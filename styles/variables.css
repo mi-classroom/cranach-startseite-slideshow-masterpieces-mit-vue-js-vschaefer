@@ -1,0 +1,94 @@
+/**
+ * Design Tokens
+ * Based on Figma design: "FD - SoSe 2025"
+ */
+
+:root {
+  /* font family */
+  --font-family-primary: 'IBM Plex Sans', sans-serif;
+  --base-font-size: 1rem;
+  --fluid-base-font-size: clamp(1rem, 4vw, 10rem);
+  
+  /* font sizes */
+  --font-size-s: calc(var(--base-font-size) * 0.75);
+  --font-size-m: var(--base-font-size);
+  --font-size-l: calc(var(--base-font-size) * 1.25);
+  --font-size-xl: calc(var(--base-font-size) * 1.5);
+  --font-size-2xl: calc(var(--base-font-size) * 1.75);
+  --font-size-3xl: calc(var(--base-font-size) * 2);
+  --font-size-4xl: calc(var(--base-font-size) * 2.5);
+  --font-size-5xl: calc(var(--base-font-size) * 3);
+  
+  
+  /* font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* line heights */
+  --line-height-tighter: 100%;
+  --line-height-tight: 120%;
+  --line-height-normal: 130%;
+  --line-height-loose: 140%;
+  
+  /* colors */
+
+  --color-dark: hsl(0deg 0% 20%);
+  --color-darker: hsl(0deg 0% 10%);
+  --color-darkest: hsl(0deg 0% 0%);
+  --color-light: hsl(0deg 0% 70%);  
+  --color-lighter: hsl(0deg 0% 85%);  
+  --color-lightest: hsl(0deg 0% 100%);  
+  --color-primary-300: #FFD37E;
+  --color-primary-400: #FFC450;
+  --color-primary-default: #FEB701;
+  --color-seconadary-default: #CC5800;
+  --color-background-default: #FFF;
+  --color-background-200: #F2F2F2;
+  --color-text-default: var(--color-darker);
+
+  
+  /* spaces */
+  --spacing-3xs: calc(var(--base-font-size) * 0.125);
+  --spacing-2xs: calc(var(--base-font-size) * 0.25);
+  --spacing-xs: calc(var(--base-font-size) * 0.5);
+  --spacing-s: calc(var(--base-font-size) * 0.7);
+  --spacing-m: calc(var(--base-font-size) * 1);
+  --spacing-l: calc(var(--base-font-size) * 1.5);
+  --spacing-xl: calc(var(--base-font-size) * 2);
+  --spacing-2xl: calc(var(--base-font-size) * 2.5);
+  --spacing-3xl: calc(var(--base-font-size) * 3);
+  --spacing-4xl: calc(var(--base-font-size) * 4);
+  --spacing-5xl:  calc(var(--base-font-size) * 5.75);
+  --spacing-6xl: calc(var(--base-font-size) * 7.5);
+  
+  /* fluid spaces */
+  --fluid-space-xs: calc(var(--fluid-base-font-size) * 0.5);
+  --fluid-space-s: calc(var(--fluid-base-font-size) * 0.7);
+  --fluid-space-m: var(--fluid-base-font-size);
+  --fluid-space-l: calc(var(--fluid-base-font-size) * 1.5);
+  --fluid-space-xl: calc(var(--fluid-base-font-size) * 2);
+
+  /* border widths  */
+  --border-width-s: 1px;
+  --border-width-m: 2px;
+  --border-width-l: 4px;
+
+  /* Radius */
+  --radius-xs: 2px;
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 16px;
+  
+  
+  /* transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+  
+  /* max width for content */
+  --max-width-content: 40rem;
+  --max-width-page: 960px;
+  --logo-width: 5rem;
+} 

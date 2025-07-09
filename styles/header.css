@@ -1,0 +1,138 @@
+body:has(.main-navigation.is-active) {
+  overflow: hidden;
+
+}
+
+.header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-button {
+    background: none;
+    border: none;
+    color: var(--color-primary-default);
+    font-size: var(--font-size-2xl);
+    padding: 0;
+    display: none;
+  }
+
+  .header-buttons {
+    display: flex;
+    gap: var(--spacing-m);
+    margin-left: var(--spacing-m);
+
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-nav-sublist {
+    display: none;
+  }
+
+  @media screen and (max-width: 899px) {
+    margin-bottom: var(--spacing-l);
+
+    .header-overlay{
+      display: none;;
+    }
+
+    .header-overlay-open-button, .search-button {
+      display: block;
+    }
+
+    .main-navigation {
+      display: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: fixed;
+      overflow-y: auto;
+      z-index: 1000;
+      background-color: var(--color-background-default);
+      padding-top: var(--spacing-2xl);
+      padding-bottom: var(--spacing-2xl);
+
+      &.is-active {
+        display: block;
+      }
+    }
+
+    .main-navigation-close-button {
+      margin-right: var(--spacing-m);
+      margin-top: var(--spacing-m);
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .header-nav {
+      font-size: var(--font-size-l);
+      font-weight: var(--font-weight-regular);
+      text-align: center;
+
+      .header-nav-sublist {
+        border-bottom: var(--border-width-m) solid var(--color-primary-default);
+        font-weight: var(--font-weight-light);
+        padding-bottom: var(--spacing-l);
+      }
+
+      li {
+        margin-bottom: 0;
+        margin-top: var(--spacing-l);
+      }
+
+      .header-nav-list {
+
+        &>li:first-child {
+          margin-top: 0;
+        }
+      }
+
+      a {
+        color: var(--color-text-default);
+        text-decoration: none;
+      }
+
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .header-nav-list {
+      display: flex;
+      flex-direction: row;
+      gap: var(--spacing-m);
+
+      li {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+
+    .search-button {
+      display: block;
+    }
+  }
+}
+
+/* Search
+############################################################################# */
+
+.header {
+  .header-search-input {
+    border: none;
+    border-bottom: var(--border-width-s) solid var(--color-text-default);
+    font-size: var(--font-size-l);
+    height: 34px;
+    margin-right: var(--spacing-xs);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

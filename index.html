@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cranach Digital Archive</title>
+
+  <link rel="stylesheet" href="/styles/_combined.css">
+  <script defer src="/assets/components/main-header.js"></script>
+  <script defer src="/assets/components/main-footer.js"></script>
+
+  <script defer src="/scripts/main.js"></script>
+  <script defer src="/scripts/carousel.js"></script>
+  <script defer src="/scripts/braggy-numbers.js"></script>
+  <script defer type="module" src="/scripts/slideshow.js"></script>
+</head>
+
+<body>
+  <main-header></main-header>
+
+  <main class="home">
+
+    <!-- big opener element -->
+    <figure class="opener is-full-width">
+      <img src="/assets/images/cranach-opener.webp"
+        alt="Lucas Cranach der Ältere, Adam und Eva, 1528, Öl auf Holz, 90 x 120 cm, Kunsthistorisches Museum Wien"
+        width="1200" height="800">
+
+      <figcaption>
+        <h1 class="zoom-in">Discover the work of Lucas Cranach</h1>
+      </figcaption>
+    </figure>
+
+    <!-- intro text -->
+    <div class="intro-text slide-in">
+      <p>Das Cranach Digital Archive (CDA) ist ein internationales Forschungsprojekt, das sich der Dokumentation und
+        Erforschung der Werke von Lucas Cranach d. Ä. (1472–1553) und seiner Werkstatt widmet. Es bietet eine umfassende
+        digitale Sammlung hochauflösender Bilder, wissenschaftlicher Analysen und historischer Dokumente zu seinen
+        Gemälden. Ziel ist es, Kunsthistorikern, Restauratoren und der Öffentlichkeit einen zentralen Zugang zu
+        detaillierten Informationen über Cranachs Werke zu ermöglichen und den Austausch wissenschaftlicher Erkenntnisse
+        zu fördern.
+      </p>
+    </div>
+
+    <!-- Slide Show Masterpieces -->
+    <div id="app">
+      <slide-show source-url="/assets/data/masterpieces.json" />
+    </div>
+
+    <!-- Finished markup of the slideshow -->
+    <div>
+      <div class="slideshow">
+        <div class="slideshow-wrapper" style="transform: translateX(0%);">
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="https://lucascranach.org/imageserver-2022/AT_KHM_GG6905_FR001/01_Overall/AT_KHM_GG6905_FR001_2008-08_Overall-m.jpg"
+                alt="Cranach Masterpiece 1" width="600" height="762" loading="lazy">
+              <figcaption>Kreuzigung Christi, sog. "Schottenkreuzigung"</figcaption>
+            </figure>
+          </div>
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="https://lucascranach.org/imageserver-2022/AT_KHM_GG6739_FR004/01_Overall/AT_KHM_GG6739_FR004_2017-01_Overall-m.jpg"
+                alt="Cranach Masterpiece 2" width="600" height="810" loading="lazy">
+              <figcaption>Büssender Hl. Hieronymus</figcaption>
+            </figure>
+          </div>
+          <div class="slideshow-item">
+            <figure>
+              <img
+                src="https://lucascranach.org/imageserver-2022/CH_SORW_1925-1b_FR006/01_Overall/CH_SORW_1925-1b_FR006_2008-11_Overall-m.jpg"
+                alt="Cranach Masterpiece 3" width="600" height="797" loading="lazy">
+              <figcaption>Bildnis des Johannes Cuspinian</figcaption>
+            </figure>
+          </div>
+        </div>
+        <nav>
+          <button class="round-button slideshow-button-previous" aria-label="Vorheriges Element">
+            <span class="icon">chevron_left</span>
+          </button>
+          <button class="round-button slideshow-button-next" aria-label="Nächstes Element">
+            <span class="icon">chevron_right</span>
+          </button>
+        </nav>
+        <div class="slideshow-thumbnails">
+          <ul class="slideshow-thumbnails-list" style="transform: translateX(0px);">
+            <li class="slideshow-thumbnails-item active">
+              <img
+                src="https://lucascranach.org/imageserver-2022/AT_KHM_GG6905_FR001/01_Overall/AT_KHM_GG6905_FR001_2008-08_Overall-s.jpg"
+                alt="Thumbnail 1" loading="lazy">
+            </li>
+            <li class="slideshow-thumbnails-item">
+              <img
+                src="https://lucascranach.org/imageserver-2022/AT_KHM_GG6739_FR004/01_Overall/AT_KHM_GG6739_FR004_2017-01_Overall-s.jpg"
+                alt="Thumbnail 2" loading="lazy">
+            </li>
+            <li class="slideshow-thumbnails-item">
+              <img
+                src="https://lucascranach.org/imageserver-2022/CH_SORW_1925-1b_FR006/01_Overall/CH_SORW_1925-1b_FR006_2008-11_Overall-s.jpg"
+                alt="Thumbnail 3" loading="lazy">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preview Masonry -->
+    <figure class="masonry">
+
+      <img src="/images/masonry/image-01.jpg" alt="Cranach Kunstwerk 1" class="masonry-item" width="400" height="600"
+        data-colspan="4" data-rowspan="4">
+      <img src="/images/masonry/image-02.jpg" alt="Cranach Kunstwerk 2" class="masonry-item" width="400" height="600"
+        data-colspan="4" data-rowspan="4">
+      <img src="/images/masonry/image-03.jpg" alt="Cranach Kunstwerk 3" class="masonry-item" width="400" height="500"
+        data-colspan="2" data-rowspan="4">
+      <img src="/images/masonry/image-04.jpg" alt="Cranach Kunstwerk 4" class="masonry-item" width="400" height="700"
+        data-colspan="2" data-rowspan="7">
+      <img src="/images/masonry/image-05.jpg" alt="Cranach Kunstwerk 5" class="masonry-item" width="400" height="400"
+        data-colspan="2" data-rowspan="8">
+      <img src="/images/masonry/image-06.jpg" alt="Cranach Kunstwerk 6" class="masonry-item" width="400" height="550"
+        data-colspan="4" data-rowspan="8">
+
+      <figcaption class="masonry-item" data-colspan="4" data-rowspan="3">
+
+        <div>
+          <p>Malerei, Zeichnungen, Druckgrafiken und Archialien.</p>
+          <button class="button is-large">Entdecken</button>
+        </div>
+      </figcaption>
+
+      <img src="/images/masonry/image-07.jpg" alt="Cranach Kunstwerk 7" class="masonry-item" width="400" height="650"
+        data-colspan="6" data-rowspan="5">
+
+    </figure>
+
+
+    <!-- about the cranachs -->
+    <div class="about-carousel">
+
+      <div class="carousel-wrapper" data-js-about-carousel-wrap>
+
+        <div class="carousel-item">
+          <figure class="about-item scale-in text-image is-active">
+            <div class="image-stack" data-js-image-stack>
+              <img src="/assets/images/lucas-cranach-1.jpg"
+                alt="Lucas Cranach der Ältere, Selbstporträt, 1545, Öl auf Holz, 50 x 40 cm, Kunsthistorisches Museum Wien"
+                width="800" height="600">
+              <img src="/assets/images/lucas-cranach-2.jpg"
+                alt="Lucas Cranach der Jüngere, Selbstporträt, 1584, Öl auf Holz, 50 x 40 cm, Kunsthistorisches Museum Wien"
+                width="800" height="600">
+              <img src="/assets/images/lucas-cranach-3.jpg"
+                alt="Cranach-Werkstatt, Selbstporträt, 1550, Öl auf Holz, 50 x 40 cm, Kunsthistorisches Museum Wien"
+                width="800" height="600">
+            </div>
+            <figcaption>
+              <h2>Lucas Cranach</h2>
+              <p>Lucas Cranach der Ältere verkörpert die Ideale eines Mannes im Zeitalter der Renaissance, der neben
+                seiner Tätigkeit als Maler, Grafiker und Buchdrucker auch als Politiker und Unternehmer tätig war.</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="carousel-item">
+          <div class="about-item">
+            <h2>Kritischer Katalog der Luther-Bildnisse (1519 - 1530)</h2>
+            <p>Ein von der Leibniz-Gemeinschaft gefördertes Forschungsprojekt, eine Kooperation des Germanischen
+              Nationalmuseums in Nürnberg mit der Friedrich-Alexander-Universität Erlangen-Nürnberg und der TH Köln,
+              hinterfragt die Authentizität der Luther-Bildnisse.</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <figure class="about-item text-image-simple">
+            <div class="image-stack">
+              <img src="/assets/images/cranach-map.webp"
+                alt="Cranach Map: Eine interaktive Karte, die die Verbreitung von Cranachs Werken in Europa zeigt."
+                width="800" height="600">
+            </div>
+            <figcaption>
+              <h2>Interdisziplinär und inter­institutionell</h2>
+              <p>Das Cranach Digital Archive zeigt, dass Kooperation eine Horizonterweiterung in der Erfassung und
+                Interpretation von Kunstwerken ermöglicht.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="carousel-indicators" data-js-carousel-indicator>
+          <li class="active"></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <button class="round-button button-previous" aria-label="Vorheriges Element" data-js-about-carousel="previous">
+          <span class="icon">chevron_left</span>
+        </button>
+
+        <button class="round-button button-next" aria-label="Nächstes Element" data-js-about-carousel="next">
+          <span class="icon">chevron_right</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Brag with Numbers Masonry-->
+    <ul class="braggy-numbers masonry is-3-to-1" data-js-braggy-numbers>
+
+
+      <li class="masonry-item" data-colspan="4" data-rowspan="6">
+        <dl>
+          <dt>
+            <span class="icon">picture_as_pdf</span>
+            <span class="text">PDF Dokumente</span>
+          </dt>
+          <dd>1100</dd>
+        </dl>
+      </li>
+
+      <li class="masonry-item" data-colspan="4" data-rowspan="6">
+        <dl>
+          <dt>
+            <span class="icon">biotech</span>
+            <span class="text">Röntgenaufnahmen</span>
+          </dt>
+          <dd>800</dd>
+        </dl>
+      </li>
+
+      <li class="masonry-item" data-colspan="4" data-rowspan="6">
+        <dl>
+          <dt>
+            <span class="icon">image</span>
+            <span class="text">Infrarotreflektogramme</span>
+          </dt>
+          <dd>1660</dd>
+        </dl>
+      </li>
+
+      <li class="masonry-item" data-colspan="4" data-rowspan="6">
+        <dl>
+          <dt>
+            <span class="icon">docs</span>
+            <span class="text">Textseiten</span>
+          </dt>
+          <dd>9600</dd>
+        </dl>
+      </li>
+    </ul>
+
+  </main>
+
+  <main-footer></main-footer>
+
+
+</body>
+
+</html>

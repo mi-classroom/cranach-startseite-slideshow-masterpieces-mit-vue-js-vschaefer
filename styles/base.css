@@ -1,0 +1,62 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: var(--color-text-default);
+  background-color: var(--color-background-default);
+  line-height: var(--line-height-loose);
+  font-weight: var(--font-weight-light);
+  overflow: auto;
+}
+
+header, main, footer{
+  padding: var(--fluid-space-m);
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  margin-bottom: var(--spacing-3xl);
+  line-height: var(--line-height-tight);
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-regular);
+  margin-top: var(--spacing-3xl);
+  margin-bottom: var(--spacing-l);
+}
+
+h3{
+  margin-top: var(--spacing-xl);
+  font-weight: var(--font-weight-regular);
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+p,
+h3,
+h4,
+dd,
+li,
+figure {
+  margin-bottom: var(--spacing-m);
+}
+
+p,
+dd,
+li,
+figcaption {
+  hyphens: auto;
+  ;
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}

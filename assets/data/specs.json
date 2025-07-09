@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "name": "hochauflösende Abbildungen",
+      "count": 25050,
+      "icon": "image"
+    },
+    {
+      "name": "PDF Dokumente",
+      "count": 1100,
+      "icon": "picture_as_pdf"
+    },
+    {
+      "name": "Röntgenaufnahmen",
+      "count": 800,
+      "icon": "biotech"
+    },
+    {
+      "name": "Infrarotreflektogramme",
+      "count": 1660,
+      "icon": "fluorescent"
+    },
+    {
+      "name": "Textseiten",
+      "count": 9400,
+      "icon": "article"
+    }
+  ]
+}

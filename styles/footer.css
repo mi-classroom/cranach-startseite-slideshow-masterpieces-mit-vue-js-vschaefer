@@ -1,0 +1,48 @@
+/* footer
+############################################################################# */
+
+footer {
+  background-color: var(--color-darker);
+  color: var(--color-light);
+  padding-bottom: var(--fluid-space-xs);
+
+  .logo {
+    margin-bottom: var(--fluid-space-m);
+    display: block;
+  }
+
+  a {
+    color: var(--color-light);
+    text-decoration: none;
+
+    &:hover {
+      font-weight: var(--font-weight-regular);
+    }
+  }
+
+  h3 {
+    margin-bottom: var(--spacing-s);
+  }
+
+  ul {
+    li {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer-navigation {
+    margin-bottom: var(--fluid-space-m);
+
+    @media screen and (min-width: 900px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--fluid-space-m);
+    }
+  }
+
+  @media screen and (min-width: 900px) {
+    .copyright {
+      grid-column: 1 / span 3;
+    }
+  }
+}

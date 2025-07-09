@@ -1,0 +1,63 @@
+.icon {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin-right: var(--spacing-2xs);
+  direction: ltr;
+  font-family: material-icons;
+  font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: inherit;
+  text-rendering: optimizelegibility;
+  text-transform: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: normal;
+
+  &.red {
+    color: red;
+  }
+
+  &.md-dark {
+    color: var(--color-text-default);
+  }
+
+  &.md-light {
+    color: var(--color-background-default);
+  }
+}
+
+.icon-s {
+  font-size: var(--font-size-s);
+  line-height: var(--font-size-s);
+}
+
+.icon-m {
+  font-size: var(--font-size-m);
+  line-height: var(--font-size-m);
+}
+
+.icon-l {
+  font-size: var(--font-size-l);
+  line-height: var(--font-size-l);
+}
+
+.icon-xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--font-size-xl);
+}
+
+.icon::before {
+  content: attr(data-icon);
+}
+
+
+.icon-inline {
+  margin-right: 0.4em;
+  font-size: var(--font-size-m);
+}
+

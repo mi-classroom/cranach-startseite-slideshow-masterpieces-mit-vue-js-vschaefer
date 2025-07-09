@@ -1,0 +1,14 @@
+@font-face {
+  font-family: ibm-plex-sans;
+  font-style: normal;
+  font-weight: 100 700;
+  src:url("/fonts/IBM_Plex_Sans-2/IBMPlexSans-VariableFont_wdth\,wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: material-icons;
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/MaterialIcons/MaterialIconsSharp-Regular.otf') format('truetype');
+}
