@@ -14,6 +14,20 @@ const slideShow = defineComponent({
           Implement slide show items
         -->
 
+        <div class="slideshow-item" v-for="(slide, index) in slideDataItems" :key="index">
+          <figure>
+            <img
+            :src="slide.img_src"
+            :alt="slide.title"
+            :title="slide.title"
+            :width="slide.width"
+            :height="slide.height"
+            >
+            <figcaption>{{ slide.title }}</figcaption>
+          </figure>
+        </div>
+
+
       </div>
       <nav>
       <!-- 
@@ -52,6 +66,16 @@ const slideShow = defineComponent({
     // Use props.sourceURL as parameter for the fetch request
     // pass the fetched data to slideDataItems.value
     const loadSlidesData = async () => {
+      try {
+        const response = await fetch(props.sourceUrl);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        slideDataItems.value = data.results;
+      } catch (error) {
+        console.error('Error fetching slide data:', error);
+      }
     }
 
 
@@ -91,15 +115,15 @@ const slideShow = defineComponent({
     const slideContainerTransform = computed(() => {
       return `translateX(-${currentIndex.value * 100}%)`;
     });
-    
+
     // Computed property to handle the translation of the thumbnails
     const thumbnailsContainerTransform = computed(() => {
-      if (!thumbnailsContainer.value || !thumbnailsContainer.value.children) { 
+      if (!thumbnailsContainer.value || !thumbnailsContainer.value.children) {
         return 'translateX(0)';
       }
 
       const currentThumbnail = thumbnailsContainer.value.children[currentIndex.value];
-      if (!currentThumbnail) { 
+      if (!currentThumbnail) {
         return 'translateX(0)';
       }
 
@@ -111,8 +135,8 @@ const slideShow = defineComponent({
       offSetX = Math.max(containerWidth - totalWidth, offSetX);
 
       return `translateX(${offSetX}px)`;
-      });
-    
+    });
+
     return {
       loadSlidesData,
       slideDataItems,
