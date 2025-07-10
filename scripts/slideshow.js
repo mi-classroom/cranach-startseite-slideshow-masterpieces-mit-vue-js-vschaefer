@@ -18,26 +18,29 @@ const slideShow = defineComponent({
           <figure>
             <img
             :src="slide.img_src"
-            :alt="slide.title"
             :title="slide.title"
             :width="slide.width"
             :height="slide.height"
+            loading="lazy"
             >
             <figcaption>{{ slide.title }}</figcaption>
           </figure>
+          
         </div>
-
-
       </div>
       <nav>
       <!-- 
         TODO [5]: 
         Implement buttons to navigate to the next and previous slide 
         connect the buttons to the nextSlide and previousSlide methods
-        hint: 'v-for="(thumb, index) in slideDataItems' can be used to iterate over the slides
       -->
-        
-        
+
+          <button @click="previousSlide" class="round-button slideshow-button-previous" aria-label="Vorheriges Element">
+            <span class="icon">chevron_left</span>
+          </button>
+          <button @click="nextSlide" class="round-button slideshow-button-next" aria-label="Nächstes Element">
+            <span class="icon">chevron_right</span>
+          </button>
       </nav>
       <div class="slideshow-thumbnails">
         <ul 
@@ -51,6 +54,18 @@ const slideShow = defineComponent({
             connect the thumbnails to the goToSlide method
             hint: 'v-for="(thumb, index) in slideDataItems' can be used to iterate over the slides          
            -->
+          <li 
+            v-for="(thumb, index) in slideDataItems" 
+            class="slideshow-thumbnails-item" 
+            :class="{ 'active': currentIndex === index }" 
+            @click="goToSlide(index)"
+          >
+            <img
+              :src="thumb.img_src"
+              :alt="thumb.title" 
+              loading="lazy">
+          </li>
+
         </ul>
       </div> 
     </div>
@@ -68,11 +83,13 @@ const slideShow = defineComponent({
     const loadSlidesData = async () => {
       try {
         const response = await fetch(props.sourceUrl);
+        console.log(props.sourceUrl);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
         slideDataItems.value = data.results;
+        console.log('Slide data loaded:', data);
       } catch (error) {
         console.error('Error fetching slide data:', error);
       }
@@ -83,9 +100,8 @@ const slideShow = defineComponent({
     // Add a computed property with the name isFirstSlide
     // Check if the current slide is the first one
     const isFirstSlide = computed(() => {
-      return 0;
-    }
-    );
+      return currentIndex.value === 0;
+    });
 
     // computed property to check if the current slide is the last one
     const isLastSlide = computed(() => {
@@ -95,6 +111,8 @@ const slideShow = defineComponent({
     const nextSlide = () => {
       if (!isLastSlide.value) {
         currentIndex.value++;
+      } else {
+        currentIndex.value = 0;
       }
     };
 
@@ -102,6 +120,11 @@ const slideShow = defineComponent({
     // Implement the previousSlide function
     // This function should decrement currentIndex.value if it is not the first slide
     const previousSlide = () => {
+      if (!isFirstSlide.value) {
+        currentIndex.value--;
+      } else {
+        currentIndex.value = slideDataItems.value.length - 1; // Wrap around to the last slide
+      }
     };
 
     // TODO [6]: 
@@ -109,6 +132,11 @@ const slideShow = defineComponent({
     // This function should take an index as a parameter and set currentIndex.value to that index
     // Ensure the index is within bounds of slideDataItems
     const goToSlide = (index) => {
+      if (index >= 0 && index < slideDataItems.value.length) {
+        currentIndex.value = index;
+      } else {
+        console.warn('Index out of bounds:', index);
+      }
     };
 
     // Computed propertie to handle the translation of the slides
